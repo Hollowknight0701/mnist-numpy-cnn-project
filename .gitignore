@@ -1,0 +1,7 @@
+dataset/
+saved_models/
+best_models/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
