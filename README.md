@@ -1,29 +1,46 @@
-### Start Up
+# MNIST Classification with NumPy MLP and CNN
 
-First look into the `dataset_explore.ipynb` and get familiar with the data.
+This repository contains my implementation for Project 1 of Neural Network and Deep Learning. The goal is to implement basic neural network components from scratch using NumPy and evaluate MLP and CNN models on MNIST.
 
-### Codes need your implementation
+## Implemented Components
 
-1. `op.py` 
-   Implement the forward and backward function of `class Linear`
-   Implement the `MultiCrossEntropyLoss`. Note that the `Softmax` layer could be included in the `MultiCrossEntropyLoss`.
-   Try to implement `conv2D`, do not worry about the efficiency.
-   You're welcome to implement other complicated layer (e.g.  ResNet Block or Bottleneck)
-2. `models.py` You may freely edit or write your own model structure.
-3. `mynn/lr_scheduler.py` You may implement different learning rate scheduler in it.
-4. `MomentGD` in `optimizer.py`
-5. Modifications in `runner.py` if needed when your model structure is slightly different from the given example.
+The main implementations are in the following files:
 
+- `mynn/op.py`
+  - Linear layer forward and backward propagation
+  - Softmax cross-entropy loss
+  - 2D convolution operator
+- `mynn/models.py`
+  - MLP baseline model
+  - CNN model
+- `mynn/optimizer.py`
+  - SGD optimizer
+  - Momentum optimizer implementation
+- `mynn/lr_scheduler.py`
+  - Learning rate scheduler implementations
 
-### Train the model.
+## Experiments
 
-Open test_train.py, modify parameters and run it.
+The experiments include:
 
-If you want to train the model on your own dataset, just change the values of variable *train_images_path* and *train_labels_path*
+1. MLP baseline on MNIST
+2. CNN model and comparison with MLP
+3. Learning rate comparison
+4. CNN error analysis with confusion matrix and misclassified examples
 
-### Test the model.
+The main scripts are:
 
-Open test_model.py, specify the saved model's path and the test dataset's path, then run the script, the script will output the accuracy on the test dataset.
+- `test_train.py`: train MLP or CNN models
+- `test_model.py`: evaluate a saved model
+- `train_lr_experiment.py`: compare different learning rates
+- `error_analysis.py`: generate confusion matrix and misclassified examples
 
+## Results
 
+The CNN model achieved a test accuracy of 98.18% on MNIST.
 
+Additional figures are saved in the `figs/` folder, including the confusion matrix, misclassified examples, and learning rate comparison.
+
+## Notes
+
+The MNIST dataset and trained model checkpoints are not included in this repository. The trained checkpoint is provided separately in the project report.
